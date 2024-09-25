@@ -5,7 +5,7 @@ import pandas as pd
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import xml.etree.ElementTree as ET
 from io import BytesIO
-from openai import OpenAI
+import openai
 import json
 import os
 import re
