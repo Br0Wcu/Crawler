@@ -169,7 +169,7 @@ Twoja propozycja:
 """
     try:
         response = openai.chat.completions.create(
-            model="gpt-4",
+            model="gpt-4o-mini",
             messages=[
                 {"role": "system", "content": "Jesteś ekspertem SEO i copywriterem specjalizującym się w optymalizacji struktury nagłówków."},
                 {"role": "user", "content": prompt}
