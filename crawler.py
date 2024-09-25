@@ -39,7 +39,7 @@ def generate_meta_tags(content, context):
             prompt += f"Kontekst: {context}\n"
         prompt += "\nWygeneruj meta title (maksymalnie 60 znaków) i meta description (maksymalnie 160 znaków) w formacie JSON. Użyj kluczy 'title' i 'description'."
 
-        response = client.chat.completions.create(
+        response = openai.chat.completions.create(
             model="gpt-4o-mini",
             messages=[
                 {
@@ -168,7 +168,7 @@ Na podstawie powyższej treści i istniejących nagłówków, zaproponuj zoptyma
 Twoja propozycja:
 """
     try:
-        response = client.chat.completions.create(
+        response = openai.chat.completions.create(
             model="gpt-4",
             messages=[
                 {"role": "system", "content": "Jesteś ekspertem SEO i copywriterem specjalizującym się w optymalizacji struktury nagłówków."},
@@ -282,7 +282,7 @@ Błędy podczas ekstrakcji danych:
 Twoja ocena i rekomendacje:"""
     
     try:
-        response = client.chat.completions.create(
+        response = openai.chat.completions.create(
             model="gpt-4o-mini",
             messages=[
                 {"role": "system", "content": "Jesteś ekspertem SEO specjalizującym się w danych strukturalnych i optymalizacji stron internetowych."},
@@ -454,7 +454,7 @@ Przygotuj szczegółową ocenę aktualnego stanu menu oraz konkretne rekomendacj
 Rozpocznij swoją analizę poniżej."""
 
     try:
-        response = client.chat.completions.create(
+        response = openai.chat.completions.create(
             model="gpt-4o-mini",
             messages=[
                 {"role": "system", "content": "Jesteś ekspertem SEO specjalizującym się w analizie i optymalizacji menu na stronach internetowych."},
@@ -521,7 +521,7 @@ Przygotuj szczegółową ocenę aktualnego stanu menu oraz konkretne rekomendacj
 Rozpocznij swoją analizę poniżej."""
     
     try:
-        response = client.chat.completions.create(
+        response = openai.chat.completions.create(
             model="gpt-4o-mini",
             messages=[
                 {"role": "system", "content": "Jesteś ekspertem SEO specjalizującym się w analizie i optymalizacji menu na stronach internetowych."},
@@ -740,7 +740,7 @@ Twoja odpowiedź powinna być zwięzła i konkretna, napisana w języku polskim.
 """
 
     try:
-        response = client.chat.completions.create(
+        response = openai.chat.completions.create(
             model="gpt-4o-mini",
             messages=[
                 {"role": "system", "content": "Jesteś ekspertem w optymalizacji wydajności stron internetowych."},
