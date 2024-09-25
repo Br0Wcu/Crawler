@@ -791,7 +791,7 @@ def display_performance_gauge(performance_score):
 
 
 def main():
-    st.title('Rozszerzone narzędzie do audytu SEO')
+    st.title('Audytorek - wersja Alpha')
 
     # Inicjalizacja zmiennych stanu sesji
     if 'stage' not in st.session_state:
@@ -839,7 +839,7 @@ def main():
 
                 context = ""
                 if generate_new_meta:
-                    context = st.text_area('Wprowadź kontekst dla generowania meta tagów:', 'np. strona produktowa dla butów męskich')
+                    context = st.text_area('Wprowadź kontekst dla generowania meta tagów, opisz czym są audytowane podstrony:', 'np. artykuły na blogu, strony prezentujące ofertę, produkty')
 
                 if st.button('Rozpocznij audyt'):
                     if urls:
