@@ -16,29 +16,12 @@ import plotly.graph_objects as go
 
 
 
-# Wczytaj klucz API z pliku konfiguracyjnego
-def load_api_key():
-    config_path = 'config.json'
-    if os.path.exists(config_path):
-        with open(config_path, 'r') as f:
-            config = json.load(f)
-            return config.get('openai_api_key')
-    return None
+# Access API keys from st.secrets
+OPENAI_API_KEY = st.secrets["openai_api_key"]
+PAGESPEED_API_KEY = st.secrets["pagespeed_api_key"]
 
-OPENAI_API_KEY = load_api_key()
-client = OpenAI(api_key=OPENAI_API_KEY)
-
-def load_pagespeed_api_key():
-    config_path = 'config.json'
-    if os.path.exists(config_path):
-        with open(config_path, 'r') as f:
-            config = json.load(f)
-            return config.get('pagespeed_api_key')
-    return None
-
-PAGESPEED_API_KEY = load_pagespeed_api_key()
-if not PAGESPEED_API_KEY:
-    st.error("Brak klucza API Pagespeed Insights. Upewnij się, że jest poprawnie ustawiony w pliku config.json.")
+# Set OpenAI API key
+openai.api_key = OPENAI_API_KEY
 
 
 # URL gifa ładowania
